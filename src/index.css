@@ -57,7 +57,6 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 .input-area {
-  display: flex;
   align-items: center;
   margin-bottom: 10px;
 }
@@ -70,10 +69,10 @@ td {
   background-color: #fff;
   color: #000000;
   padding: 8px;
+  max-width: 300px;
 }
 table tr {
   border-bottom: 1px solid #000000;
-  background-color: #9f1212;
 }
 table {
   width: 90%;
@@ -82,4 +81,17 @@ table {
 tr:hover {
   background-color: #f3f3f3;
   color: #000;
+}
+.delete-btn {
+  background-color: #242424;
+}
+.content-container {
+  margin-bottom: 40px; 
+}
+
+table {
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 25px; 
+  overflow: hidden; /* Ensure content inside the table respects the rounded corners */
 }
