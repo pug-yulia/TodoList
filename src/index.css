@@ -26,9 +26,12 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  justify-content: center; 
+  align-items: center;
   min-width: 320px;
   min-height: 100vh;
+  margin-bottom: 40px; 
+  margin-top: 10px;
 }
 
 h1 {
@@ -57,7 +60,9 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 .input-area {
-  align-items: center;
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
   margin-bottom: 10px;
 }
 button {
@@ -70,6 +75,7 @@ td {
   color: #000000;
   padding: 8px;
   max-width: 300px;
+  text-align: center;
 }
 table tr {
   border-bottom: 1px solid #000000;
