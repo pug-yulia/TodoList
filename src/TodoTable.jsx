@@ -7,6 +7,7 @@ function TodoTable({ todos, onDelete, clearTodos }) {
         <tr>
           <th>Description</th>
           <th>Date</th>
+          <th>Priority</th>
           <th className="delete-btn">
             <button onClick={clearTodos} style={{ width: "80%" }}>
               Clear
@@ -19,6 +20,7 @@ function TodoTable({ todos, onDelete, clearTodos }) {
           <tr key={index}>
             <td>{todo.description}</td>
             <td>{todo.date}</td>
+            <td>{todo.priority}</td>
             <td className="delete-btn">
               <button onClick={() => onDelete(index)}>Delete</button>
             </td>
