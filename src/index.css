@@ -60,6 +60,7 @@ button:focus-visible {
   align-items: center; 
   justify-content: center; 
   margin-bottom: 20px;
+  margin-top: 10px;
 }
 button {
   background-color: #ffffff;
