@@ -5,6 +5,10 @@ import { AgGridReact } from "ag-grid-react"; // the AG Grid React Component
 import "ag-grid-community/styles/ag-grid.css"; // Core grid CSS, always needed
 import "ag-grid-community/styles/ag-theme-alpine.css"; // Optional theme CSS
 
+import Button from "@mui/material/Button";
+import TextField from '@mui/material/TextField';
+import Stack from '@mui/material/Stack';
+
 function App() {
   const [desc, setDesc] = useState("");
   const [date, setDate] = useState("");
@@ -76,38 +80,41 @@ function App() {
 
   return (
     <div className="content-container">
-      <h1 style={{ color: "white", textAlign: "center", fontWeight: "bold" }}>
-        Todo List
-      </h1>
       <div className="input-area">
-        <input
-          type="text"
+      <Stack direction="row" spacing={2} justifyContent="center" alignItems="center">
+      <TextField
+          label="Description"
+          variant="standard"
           name="desc"
-          onChange={inputChanged}
           value={desc}
-          placeholder="Description"
+          onChange={inputChanged}
           style={{ marginRight: "10px", height: "30px" }}
         />
-        <input
-          type="date"
+        <TextField
+          label="Date"
+          variant="standard"
           name="date"
-          onChange={inputChanged}
           value={date}
-          placeholder="Date"
+          onChange={inputChanged}
           style={{ marginLeft: "5px", height: "30px", minWidth: "150px" }}
         />
-        <input
-          type="text"
+        <TextField
+          label="Priority"
+          variant="standard"
           name="priority"
-          onChange={inputChanged}
           value={priority}
-          placeholder="Priority"
+          onChange={inputChanged}
           style={{ marginLeft: "15px", height: "30px" }}
         />
-        <button onClick={addTodo}>Add</button>
-        <button onClick={deleteTodo}>Delete</button>
+        <Button onClick={addTodo} variant="contained">
+          Add
+        </Button>
+        <Button onClick={deleteTodo} variant="contained">
+          Delete
+        </Button>
+        </Stack>
       </div>
-      <div className="ag-theme-alpine" style={{ height: 480, width: 680  }}>
+      <div className="ag-theme-alpine" style={{ height: 480, width: 680 }}>
         <AgGridReact
           ref={gridRef}
           onGridReady={(params) => (gridRef.current = params.api)}
