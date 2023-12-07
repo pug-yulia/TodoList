@@ -33,7 +33,13 @@ function App() {
       filter: true,
       width: 225,
     },
-    { field: "date", sortable: true, editable: true, filter: true, resizable: true },
+    {
+      field: "date",
+      sortable: true,
+      editable: true,
+      filter: true,
+      resizable: true,
+    },
     {
       field: "priority",
       sortable: true,
@@ -67,7 +73,7 @@ function App() {
     const newTodo = { description: desc, date, priority };
     setTodos([...todos, newTodo]);
     setDesc("");
-    setDate(null); 
+    setDate(null);
     setPriority("");
   };
 
@@ -82,6 +88,11 @@ function App() {
       alert("Select row(s) first");
     }
   };
+
+  const clearTodos = () => {
+    setTodos([]);
+  };
+  
 
   return (
     <div className="content-container">
@@ -124,9 +135,12 @@ function App() {
           <Button onClick={deleteTodo} variant="contained">
             Delete
           </Button>
+          <Button onClick={clearTodos} variant="contained">
+            Clear
+          </Button>
         </Stack>
       </div>
-      <div className="ag-theme-alpine" style={{ height: 480, width: 800 }}>
+      <div className="ag-theme-alpine" style={{ height: 480, width: 900 }}>
         <AgGridReact
           ref={gridRef}
           onGridReady={(params) => (gridRef.current = params.api)}

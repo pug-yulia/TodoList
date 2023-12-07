@@ -18,7 +18,7 @@ function TabApp() {
       </Tabs>
       {value === "one" && (
         <div style={{ textAlign: "center" }}>
-          <h2>Welcome?</h2>
+          <h2>Welcome</h2>
         </div>
       )}
       {value === "two" && (
